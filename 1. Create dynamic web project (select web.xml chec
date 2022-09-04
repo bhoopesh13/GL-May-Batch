@@ -1,0 +1,31 @@
+1. Create dynamic web project (select web.xml checkbox while creating)
+2. paste all the jar files inside lib foler (for solving all dependecy) -> maven
+3. Complete web.xml file, create dispatcher servelet and servelet mapping for the same.
+4. complete spring-mvc-demo-servlet.xml file
+	- use component scan
+	- use view resolver and provide correct prefix and suffix value
+	- create dataSoruce, put correct portnumber, database(create manually, username, password)
+	- in sessionFactory bean, provide all the clasess in the list->value tag for that you want to create tables in Db
+	-  create transactionManager bean
+5. Create all the entity class (Book class)
+	-  use Entity, table, column annotation
+	-  create all the column
+	- mention primary key and auto increment
+	- default constructor
+	- para constructor
+	- getter / setter
+6. Create HelloController
+	- use @Controller on top of class
+	- create method with correct requestMapping and return view name (demo)
+	- make sure that you have demo.jsp at correct location
+	(in demo.jsp, we are using books/list, to support this we need to create another controller mapping)
+7. Create BooksController.java
+	- create mapping with method
+8. Create interface BookService
+9. Create implementation class for BookService
+
+
+
+http://localhost:8080/LibraryManagement/
+
+
