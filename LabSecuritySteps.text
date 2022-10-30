@@ -1,0 +1,46 @@
+1. Create springBoot application with https://start.spring.io/
+2. Import springBoot app into eclipse
+3. In Pom.xml, update all the required dependency.
+4. Create the package structure
+	- service package
+	- Controller package
+	- entity package
+	- security package
+	- repository package
+5. update application.properties in src/main/resource folder
+6. put required classes in entity, service, controller and reposity package (take a reference of previous student management dynamic web project and modify as per need(check library management spring boot app for reference))
+	- entity class
+	- repository class
+	- service interface
+	- service interface implementation class
+	- controller class
+7. put jsp files in views folder (src/main/webapp/WEB-INF/views), create the package if missing.
+	(for now comment security dependency in pom.xml)
+
+8. Add Security layer on this project
+9. Add User and Role entity in entity package
+10. UserRepository interface inside repository package
+11. Create WebSecurityConfig class inside security package
+	- override required methods, create required beans (take reference of libraryManagement project)
+12. create UserDetailsServiceImpl class in service which will 		implements 		UserDetailsService interface
+	- provide implementation of required methods.
+13. create MyUserDetails class in security packagewhich will 	implements 														org.springframework.security.core.userdetails.UserDetails
+14. run your application and you will see user, roles and user_roles table in mysql workbench
+	- we need to fill data inside user, roles and user_roles table.
+	for roles:
+		insert into roles values(1,"ADMIN");
+		insert into roles values(2,"USER");
+	for users :
+		insert into users values (1,"<ENCRP_KEYFOR_ADMIN>","ADMIN");
+		insert into users values (2,"<ENCRP_KEYFOR_USER>","USER");
+		(to generate encrypt key, use https://bcrypt-generator.com/ website)
+	for users_roles table:
+		insert into users_roles values (1,1);
+		insert into users_roles values (2,2);
+15. Now you can login into application with
+		ADMIN 	ADMIN
+		USER    USER
+
+16. For handling error case, we need controller mapping inside controller class (/student/403) and respective jsp (403.jsp)in views folder, refer mentor session project.
+
+
